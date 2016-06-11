@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "host": "localhost",
+        "user": "root",
+        "password" : "",
+        "database": "angularjs_cms",
+        "driver": "mysql",
+        "multipleStatements": true
+    }
+}

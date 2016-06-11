@@ -1,0 +1,175 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Модерация имущества пользователей</h4>
+
+    <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: DYNAMIC TABLE -->
+<div class="container-fluid container-fullw">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <!-- /// controller:  'ngTableCtrl' -  localtion: assets/js/controllers/ngTableCtrl.js /// -->
+                    <div ng-controller="propertyCtrl">
+                      <div ng-if="viewingData" class="col-md-12">
+                            <div class="padding-bottom-20">
+                                <h3>Просмотр имущества</h3>
+                            </div>
+
+                            <div ng-if="items.length > 0">
+                              <button class="btn btn-primary col-md-offset-5" ng-click="displayList()">к списку имущества</button>
+                              <hr/>
+                            </div>
+                            <div style="border:2px solid green;padding:5px;margin:5px;" ng-if="errorMessage">
+                              {{errorMessage}}
+                            </div>
+                            <form class="form-horizontal padding-bottom-20" role="form">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Город</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.town}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Адрес</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.address}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Количество комнат</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.display_rooms_count}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Тип дома</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.display_house_type}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Этаж</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.floor}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Этажей в доме</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.floors_count}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Площадь</label>
+                                    <div class="col-md-4">
+                                      <span class="form-control no-border">{{property.area_size}} 
+                                        <span>м²</span>
+                                      </span> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Кадастровый номер</label>
+                                    <div class="col-md-6">
+                                      <span class="form-control no-border">{{property.cadastral_id}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Описание обьявления</label>
+                                    <div class="col-md-6">
+                                      <span class="form-control no-border">{{property.description}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Цена</label>
+                                    <div class="col-md-2">
+                                      <span class="form-control no-border">{{property.price}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Изображения</label>
+                                    <div class="col-md-2">
+                                      <div ng-repeat="image in property.images" class="pull-left padding-5">
+                                        <img src="/{{image}}" width="300"/>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <div ng-if="property.status != 'approved' && property.status != 'declined'">
+                                    <div class="col-md-offset-2 col-md-4">
+                                        <input ng-click="approveProperty(property.id)" type="submit" value="Подтвердить" class="btn btn-primary btn-wide pull-right" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input ng-click="declineProperty(property.id)" type="submit" value="Отклонить" class="btn btn-primary btn-red btn-wide" />
+                                    </div>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div ng-if="listingData">
+                            <div class="padding-bottom-20">
+                                <h3>Все имущество</h3>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Данные пользователя</th>
+                                      <th>Адрес объекта</th>
+                                      <th>Статус объекта</th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr ng-if="!items.length">
+                                    <td colspan="3">
+                                      Данные отсутствуют
+                                    </td>
+                                  </tr>
+                                  <tr ng-repeat="(key, item) in items">
+                                    <td>
+                                      <table>
+                                        <tr>
+                                          <td><b>Имя:</b></td>
+                                          <td>&nbsp;</td>
+                                          <td>{{item.user_name}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Email:</b></td>
+                                          <td>&nbsp;</td>
+                                          <td>{{item.user_email}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Телефон:</b></td>
+                                          <td>&nbsp;</td>
+                                          <td>{{item.user_phone}}</td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                    <td>{{item.address}} </td>
+                                    <td>{{item.displayStatus}} </td>
+                                    <td align="right">
+                                      <button type="button" class="btn btn-blue" ng-click="showPropertyForm(key)">
+                                        <span class="ti-pencil"></span>
+                                        просмотр</button>
+                                      <button type="button" class="btn btn-red" ng-click="removeRow(item.id)">
+                                        <span class="ti-trash"></span>
+                                        удалить
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end: DYNAMIC TABLE -->

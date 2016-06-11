@@ -1,0 +1,172 @@
+<!-- start: LANDING PAGE -->
+<div class="landing-page">
+    <div id="section-0">
+        <div class="navbar navbar-default" id="landing-header" role="navigation" landing-header>
+            <!-- start: TOP NAVIGATION CONTAINER -->
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- start: RESPONSIVE MENU TOGGLER -->
+                    <a class="landing-menu-toggler btn btn-red hidden-sm hidden-md hidden-lg mobile-button" id="landing-menu-toggler" ng-click="landingNavbarCollapsed = !landingNavbarCollapsed">
+                        <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+                    </a>
+                    <!-- end: RESPONSIVE MENU TOGGLER -->
+                    <!-- start: LOGO -->
+                    <a ui-sref="landing.welcome" class="navbar-brand">
+                        <img src="assets/images/logo.png" alt="Clip-Two">
+                    </a>
+                    <!-- end: LOGO -->
+                </div>
+                <div class="navbar-collapse collapse" uib-collapse="landingNavbarCollapsed" ng-init="landingNavbarCollapsed = true" off-click="landingNavbarCollapsed = true" off-click-if='!landingNavbarCollapsed' off-click-filter="'#landing-menu-toggler'">
+                    <ul class="nav navbar-nav navbar-right" ct-fullheight="window" data-ct-fullheight-exclusion="#landing-header" data-ct-fullheight-if="isSmallDevice">
+                        <li class="active">
+                            <a href="#section-0" du-smooth-scroll du-scrollspy offset="30" ng-click="landingNavbarCollapsed = true">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-1" du-smooth-scroll du-scrollspy offset="30" ng-click="landingNavbarCollapsed = true">
+                                Features
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-2" du-smooth-scroll du-scrollspy offset="30" ng-click="landingNavbarCollapsed = true">
+                                Testimonials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-3" du-smooth-scroll du-scrollspy offset="30" ng-click="landingNavbarCollapsed = true">
+                                Team Members
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-4" du-smooth-scroll du-scrollspy offset="30" ng-click="landingNavbarCollapsed = true">
+                                Pricing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section-5" du-smooth-scroll du-scrollspy offset="30" ng-click="landingNavbarCollapsed = true">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+                    <div class="close-handle visible-xs-block menu-toggler" ng-click="landingNavbarCollapsed = true" ng-swipe-up="landingNavbarCollapsed = true">
+                        <div class="arrow-left"></div>
+                        <div class="arrow-right"></div>
+                    </div>
+                    <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+                </div>
+            </div>
+            <!-- end: TOP NAVIGATION CONTAINER -->
+        </div>
+        <div class="landing-content dots-left dots-white"  style="background: url('assets/images/carousel/carousel002.jpg')">
+            <!-- start: CAROUSEL -->
+           
+                <div class="container">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="caption">
+                                <div style="background-color: white;">
+                                    <br/>
+                                    <br/>
+                                    <h1 align="center" class="text-bold">
+                                        Квартира по супер-цене
+                                    </h1>
+                                    <hr/>
+
+                                    <br/>
+                                    <form class="form-horizontal padding-bottom-20" role="form">
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Город</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.town}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Адрес</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.address}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Количество комнат</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.display_rooms_count}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Тип дома</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.display_house_type}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Этаж</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.floor}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Этажей в доме</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.floors_count}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Площадь</label>
+                                            <div class="col-md-4">
+                                                <span class="form-control no-border">{{property.area_size}} 
+                                                    <span>м²</span>
+                                                </span> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Описание</label>
+                                            <div class="col-md-6">
+                                                <span class="padding-10 no-border">{{property.description}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Цена</label>
+                                            <div class="col-md-2">
+                                                <span class="form-control no-border">{{property.price}} р.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Изображения</label>
+                                            <div class="col-md-8">
+                                                <div ng-repeat="image in property.images" class="pull-left padding-5">
+                                                    <img src="/{{image}}" width="400"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+            <!-- end: CAROUSEL -->
+        </div>
+    </div>
+    <div id="section-5">
+        <section class="container-fluid container-fullw padding-bottom-30 section-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="margin-top-20">
+                        &copy; {{app.year}} <span class="text-bold text-uppercase">{{ app.author }}</span>. <span translate="footer.copyright.MESSAGE">All rights reserved</span>
+                        <br>
+                        Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- end: LANDING PAGE -->

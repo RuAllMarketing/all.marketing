@@ -1,0 +1,6 @@
+{
+    "smtpAddr": "smtps://olexiy.z%40gmail.com:password@smtp.gmail.com",
+    "smtpFrom": "olexiy.z@gmail.com",
+    "siteName": "Тестовый Packet сайт",
+    "emailConfirmLink": "http://localhost/angularjs-cms-frontend/#/login/confirm/%hash%"
+}
