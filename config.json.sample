@@ -1,0 +1,6 @@
+﻿{
+    "smtpAddr": "smtps://olexiy.z%40gmail.com:password@smtp.gmail.com",
+    "smtpFrom": "info@all.marketing",
+    "siteName": "Тестовый Packet сайт",
+    "emailConfirmLink": "http://all.marketing/angularjs-cms-frontend/#/login/confirm/%hash%"
+}

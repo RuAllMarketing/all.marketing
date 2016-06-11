@@ -1,8 +1,8 @@
 {
     "name": "js-cms-app-server-api",
-    "version": "0.0.1",
-    "description": "Backend for packet-based application",
-    "author": "Olexiy Zamkoviy <olexiy.z@gmail.com>",
+    "version": "0.01",
+    "description": "CRM Gavels.ru",
+    "author": "All Marketing <info@all.marketing>",
     "main": "server.js",
     "scripts": {
         "start": "nodemon server.js"

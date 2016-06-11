@@ -1,9 +1,9 @@
 {
     "dev": {
         "host": "localhost",
-        "user": "root",
-        "password" : "",
-        "database": "angularjs_cms",
+        "user": "AllMarketing",
+        "password" : "Pw102800",
+        "database": "crm-cms",
         "driver": "mysql",
         "multipleStatements": true
     }
