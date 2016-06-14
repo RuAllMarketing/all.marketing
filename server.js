@@ -11,7 +11,7 @@ const express = require('express'),
 
 var mailTransporter = nodemailer.createTransport(config.smtpAddr);
 
-const PORT = 8080;
+const PORT = 80;
 
 // App
 const app = express();

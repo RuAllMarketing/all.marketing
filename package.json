@@ -1,20 +1,20 @@
 {
-    "name": "js-cms-app-server-api",
-    "version": "0.01",
-    "description": "CRM Gavels.ru",
-    "author": "All Marketing <info@all.marketing>",
-    "main": "server.js",
-    "scripts": {
-        "start": "nodemon server.js"
-    },
-    "dependencies": {
-        "db-migrate": "0.9.25",
-        "express": "^4.13.3",
-        "mysql": "2.11.0",
-        "body-parser": "1.15.1",
-        "crypto": "^0.0.3",
-        "nodemailer": "~2.4.2",
-        "multer": "~1.1.0"
-    }
+  "name": "js-cms-app-server-api",
+  "version": "1.0.0",
+  "description": "CRM Gavels.ru",
+  "author": "All Marketing <info@all.marketing>",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "1.15.1",
+    "crypto": "^0.0.3",
+    "db-migrate": "0.9.25",
+    "express": "^4.13.3",
+    "multer": "~1.1.0",
+    "mysql": "2.11.0",
+    "nodemailer": "~2.4.2",
+    "nodemon": "^1.9.2"
+  }
 }
-

@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "host": "localhost",
+        "user": "root",
+        "password" : "Pw102800",
+        "database": "gavelscms",
+        "driver": "mysql",
+        "multipleStatements": true
+    }
+}
